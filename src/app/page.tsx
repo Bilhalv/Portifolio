@@ -80,7 +80,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] w-full">
       {/* Sticky Header */}
-      <nav className="sticky top-5 px-6 py-4 rounded-3xl bg-gradient-to-r from-white to-purple-100 dark:from-gray-800 dark:to-purple-900 z-50 shadow-lg backdrop-blur-sm">
+      <nav className="sticky top-5 px-6 py-4 rounded-3xl bg-gradient-to-r from-white to-purple-100/75 dark:from-gray-800 dark:to-purple-900/75 z-50 shadow-lg">
         <ul className="flex justify-center sm:gap-12 gap-2 md:gap-6">
           {menuItems.map((item) => (
             <li
