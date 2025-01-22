@@ -80,7 +80,7 @@ export default function Home() {
   return (
     <div className="grid grid-rows-[60px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       {/* Sticky Header */}
-      <nav className="sticky top-5 px-6 py-4 rounded-3xl bg-gradient-to-r from-white to-blue-100 dark:from-gray-800 dark:to-gray-900 z-50 shadow-lg backdrop-blur-sm">
+      <nav className="sticky top-5 px-6 py-4 rounded-3xl bg-gradient-to-r from-white to-purple-100 dark:from-gray-800 dark:to-purple-900 z-50 shadow-lg backdrop-blur-sm">
         <ul className="flex justify-center gap-12">
           {menuItems.map((item) => (
             <li
@@ -91,7 +91,7 @@ export default function Home() {
                 onClick={() => handleScroll(item.id)}
                 className={`text-lg transition-colors duration-300 flex flex-col items-center ${
                   activeSection === item.id
-                    ? "font-extrabold text-blue-600"
+                    ? "font-extrabold text-purple-600"
                     : "text-gray-700 dark:text-gray-300"
                 }`}
               >
@@ -110,7 +110,11 @@ export default function Home() {
                   isDarkMode ? "translate-x-6" : "translate-x-0"
                 }`}
               >
-                {isDarkMode ? <DarkMode fontSize="small" /> : <LightMode fontSize="small" />}
+                {isDarkMode ? (
+                  <DarkMode fontSize="small" />
+                ) : (
+                  <LightMode fontSize="small" />
+                )}
               </span>
             </button>
           </li>
@@ -260,32 +264,26 @@ export default function Home() {
               </h3>
               <ul className="flex flex-col gap-2">
                 <li className="flex items-center">
-                  <Image
+                  <img
+                    className="mr-2 size-6  dark:invert dark:saturate-100 transition-colors"
                     src="/python.svg"
                     alt="Python"
-                    width={24}
-                    height={24}
-                    className="mr-2"
                   />
                   Python
                 </li>
                 <li className="flex items-center">
-                  <Image
+                  <img
+                    className="mr-2 size-6  dark:invert dark:saturate-100 transition-colors"
                     src="/javascript.svg"
                     alt="JavaScript"
-                    width={24}
-                    height={24}
-                    className="mr-2"
                   />
                   JavaScript
                 </li>
                 <li className="flex items-center">
-                  <Image
+                  <img
+                    className="mr-2 size-6  dark:invert dark:saturate-100 transition-colors"
                     src="/typescript.svg"
                     alt="TypeScript"
-                    width={24}
-                    height={24}
-                    className="mr-2"
                   />
                   TypeScript
                 </li>
@@ -297,32 +295,26 @@ export default function Home() {
               </h3>
               <ul className="flex flex-col gap-2">
                 <li className="flex items-center">
-                  <Image
+                  <img
+                    className="mr-2 size-6  dark:invert dark:saturate-100 transition-colors"
                     src="/react.svg"
                     alt="React.js"
-                    width={24}
-                    height={24}
-                    className="mr-2"
                   />
                   React.js
                 </li>
                 <li className="flex items-center">
-                  <Image
+                  <img
+                    className="mr-2 size-6  dark:invert dark:saturate-100 transition-colors"
                     src="/next.svg"
                     alt="Next.js"
-                    width={24}
-                    height={24}
-                    className="mr-2"
                   />
                   Next.js
                 </li>
                 <li className="flex items-center">
-                  <Image
+                  <img
+                    className="mr-2 size-6  dark:invert dark:saturate-100 transition-colors"
                     src="/react.svg"
                     alt="React Native"
-                    width={24}
-                    height={24}
-                    className="mr-2"
                   />
                   React Native
                 </li>
@@ -332,32 +324,26 @@ export default function Home() {
               <h3 className="text-2xl font-medium mb-2">Tools & Platforms</h3>
               <ul className="flex flex-col gap-2">
                 <li className="flex items-center">
-                  <Image
+                  <img
+                    className="mr-2 size-6  dark:invert dark:saturate-100 transition-colors"
                     src="/mysql.svg"
                     alt="MySQL"
-                    width={24}
-                    height={24}
-                    className="mr-2"
                   />
                   MySQL
                 </li>
                 <li className="flex items-center">
-                  <Image
+                  <img
+                    className="mr-2 size-6  dark:invert dark:saturate-100 transition-colors"
                     src="/figma.svg"
                     alt="Figma"
-                    width={24}
-                    height={24}
-                    className="mr-2"
                   />
                   Figma
                 </li>
                 <li className="flex items-center">
-                  <Image
+                  <img
+                    className="mr-2 size-6  dark:invert dark:saturate-100 transition-colors"
                     src="/vscode.svg"
                     alt="VS Code"
-                    width={24}
-                    height={24}
-                    className="mr-2"
                   />
                   VS Code
                 </li>
@@ -367,32 +353,26 @@ export default function Home() {
               <h3 className="text-2xl font-medium mb-2">Personal Attributes</h3>
               <ul className="flex flex-col gap-2">
                 <li className="flex items-center">
-                  <Image
+                  <img
+                    className="mr-2 size-6  dark:invert dark:saturate-100 transition-colors"
                     src="/proactivity.svg"
                     alt="Proactivity"
-                    width={24}
-                    height={24}
-                    className="mr-2"
                   />
                   Proactivity
                 </li>
                 <li className="flex items-center">
-                  <Image
+                  <img
+                    className="mr-2 size-6  dark:invert dark:saturate-100 transition-colors"
                     src="/charisma.svg"
                     alt="Charisma"
-                    width={24}
-                    height={24}
-                    className="mr-2"
                   />
                   Charisma
                 </li>
                 <li className="flex items-center">
-                  <Image
+                  <img
+                    className="mr-2 size-6  dark:invert dark:saturate-100 transition-colors"
                     src="/creativity.svg"
                     alt="Creativity"
-                    width={24}
-                    height={24}
-                    className="mr-2"
                   />
                   Creativity
                 </li>
