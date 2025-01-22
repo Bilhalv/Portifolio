@@ -78,10 +78,10 @@ export default function Home() {
   };
 
   return (
-    <div className="grid grid-rows-[60px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="flex flex-col items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] w-full">
       {/* Sticky Header */}
       <nav className="sticky top-5 px-6 py-4 rounded-3xl bg-gradient-to-r from-white to-purple-100 dark:from-gray-800 dark:to-purple-900 z-50 shadow-lg backdrop-blur-sm">
-        <ul className="flex justify-center gap-12">
+        <ul className="flex justify-center sm:gap-12 gap-2 md:gap-6">
           {menuItems.map((item) => (
             <li
               key={item.id}
@@ -96,7 +96,7 @@ export default function Home() {
                 }`}
               >
                 <div>{item.icon}</div>
-                <div>{item.name}</div>
+                <div className="mt-2 hidden md:block">{item.name}</div>
               </button>
             </li>
           ))}
@@ -139,7 +139,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Placeholder for Future Projects */}
             <a
-              className="group relative border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden w-[400px] h-[300px] transition-transform shadow-lg hover:shadow-xl hover:scale-105"
+              className="group relative border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden sm:size-80 size-60 transition-transform shadow-lg hover:shadow-xl hover:scale-105"
               href="https://github.com/FeirasProjeto/Minha-Feira"
               target="_blank"
               rel="noopener noreferrer"
@@ -260,7 +260,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-8 text-gray-700 dark:text-gray-300">
             <div>
               <h3 className="text-2xl font-medium mb-2">
-                Programming Languages
+                <span className="md:hidden">Programming</span> Languages
               </h3>
               <ul className="flex flex-col gap-2">
                 <li className="flex items-center">
