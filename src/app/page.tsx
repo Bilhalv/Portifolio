@@ -169,6 +169,9 @@ export default function Home() {
                 </div>
               </div>
             </a>
+            <div className="flex items-center justify-center w-full h-full text-4xl font-bold text-gray-400 dark:text-gray-600">
+              More soon...
+            </div>
           </div>
         </section>
 
