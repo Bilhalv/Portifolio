@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import i18next from "i18next";
 import { useEffect, useState } from "react";
 import {
   GitHub,
@@ -20,13 +21,41 @@ import {
 export default function Home() {
   const [activeSection, setActiveSection] = useState("");
   const menuItems = [
-    { name: "Home", id: "title", icon: <HomeIcon /> },
-    { name: "Projects", id: "projects", icon: <ProjectsIcon /> },
-    { name: "About", id: "about", icon: <AboutIcon /> },
-    { name: "Experience", id: "experience", icon: <ExperienceIcon /> },
-    { name: "Education", id: "education", icon: <EducationIcon /> },
-    { name: "Skills", id: "skills", icon: <SkillsIcon /> },
-    { name: "Contact", id: "contact", icon: <ContactIcon /> },
+    {
+      name: i18next.language !== "pt" ? "Home" : "Inicio",
+      id: "title",
+      icon: <HomeIcon />,
+    },
+    {
+      name: i18next.language !== "pt" ? "Projects" : "Projetos",
+      id: "projects",
+      icon: <ProjectsIcon />,
+    },
+    {
+      name: i18next.language !== "pt" ? "About" : "Sobre",
+      id: "about",
+      icon: <AboutIcon />,
+    },
+    {
+      name: i18next.language !== "pt" ? "Experience" : "Experiencia",
+      id: "experience",
+      icon: <ExperienceIcon />,
+    },
+    {
+      name: i18next.language !== "pt" ? "Education" : "Educação",
+      id: "education",
+      icon: <EducationIcon />,
+    },
+    {
+      name: i18next.language !== "pt" ? "Skills" : "Habilidades",
+      id: "skills",
+      icon: <SkillsIcon />,
+    },
+    {
+      name: i18next.language !== "pt" ? "Contact" : "Contato",
+      id: "contact",
+      icon: <ContactIcon />,
+    },
   ];
 
   useEffect(() => {
@@ -129,15 +158,21 @@ export default function Home() {
         >
           <h1 className="text-5xl font-bold">Pedro Bilhalva Oliveira</h1>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            System Analysis and Development Student | Tech Enthusiast
+            {i18next.language !== "pt"
+              ? "Analysis and Development Student | Tech Enthusiast"
+              : "Estudante de Análise e Desenvolvimento de Sistemas | Entusiasta de Tecnologia"}
+            System
           </p>
         </section>
 
         {/* Featured Project Gallery */}
         <section id="projects" className="w-full">
-          <h2 className="text-3xl font-semibold mb-6">Featured Projects</h2>
+          <h2 className="text-3xl font-semibold mb-6">
+            {i18next.language !== "pt"
+              ? "Featured Projects"
+              : "Projetos Principais"}
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Placeholder for Future Projects */}
             <a
               className="group relative border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden sm:size-80 size-60 transition-transform shadow-lg hover:shadow-xl hover:scale-105"
               href="https://github.com/FeirasProjeto/Minha-Feira"
@@ -169,8 +204,9 @@ export default function Home() {
                 </div>
               </div>
             </a>
+            {/* Placeholder for Future Projects */}
             <div className="flex items-center justify-center w-full h-full text-4xl font-bold text-gray-400 dark:text-gray-600">
-              More soon...
+              {i18next.language !== "pt" ? "More soon..." : "Mais em breve..."}
             </div>
           </div>
         </section>
@@ -180,45 +216,86 @@ export default function Home() {
           <h2 className="text-3xl font-semibold mb-4">About Me</h2>
           <div className="flex flex-col sm:flex-row gap-8">
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              Olá! I am a student passionate about technology, always seeking
-              new frameworks and opportunities to grow. Currently pursuing a
-              degree in System Analysis and Development at UniSenac, I
-              specialize in web programming, databases, and algorithms. My
-              experience spans roles in IT assistance, website development, and
-              process automation.
+              {i18next.language !== "pt"
+                ? "Olá! I am a student passionate about technology, always seeking new frameworks and opportunities to grow. Currently pursuing a degree in System Analysis and Development at UniSenac, I specialize in web programming, databases, and algorithms. My experience spans roles in IT assistance, website development, and process automation."
+                : "Olá! Sou um estudante apaixonado por tenologia, sempre buscando novos frameworks e novas oportunidades para crescer. Atualmente estou cursando Análise e desenvolvimento de sistemas na UniSenac, e especializo em programação web, bancos de dados e algoritmos. Minha experiência abrange cargos de assistente técnico, desenvolvimento de sites e automação de processos."}
             </p>
           </div>
         </section>
 
         {/* Experience Section */}
         <section id="experience" className="w-full mt-12">
-          <h2 className="text-3xl font-semibold mb-4">Experience</h2>
+          <h2 className="text-3xl font-semibold mb-4">
+            {i18next.language !== "pt" ? "Experience" : "Experiência"}
+          </h2>
           <div className="flex flex-col gap-6">
             <div>
-              <h3 className="text-xl font-medium">IT Assistant</h3>
+              <h3 className="text-xl font-medium">
+                {i18next.language !== "pt"
+                  ? "IT Assistant"
+                  : "Assistente de TI"}
+              </h3>
               <p className="text-sm text-gray-600">
                 ASSTBM | 2023 - Current | Pelotas, RS, Brazil
               </p>
               <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
-                <li>Technical assistance</li>
-                <li>Website development</li>
-                <li>Document digitization</li>
-                <li>Process automation</li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Technical assistance"
+                    : "Assistência técnica"}
+                </li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Website development"
+                    : "Desenvolvimento de sites"}
+                </li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Document digitization"
+                    : "Digitalização de documentos"}
+                </li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Process automation"
+                    : "Automação de processos"}
+                </li>
               </ul>
             </div>
             <div>
               <h3 className="text-xl font-medium">
-                IT Assistant and Social Media
+                {i18next.language !== "pt"
+                  ? "IT Assistant and Social Media"
+                  : "Assistente de TI e Redes Sociais"}
               </h3>
               <p className="text-sm text-gray-600">
                 SP Motos | 2023 - 2024 | Pelotas, RS, Brazil
               </p>
               <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
-                <li>Technical assistance</li>
-                <li>Website development</li>
-                <li>Document digitization</li>
-                <li>Process automation</li>
-                <li>Social media management</li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Technical assistance"
+                    : "Assistência técnica"}
+                </li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Website development"
+                    : "Desenvolvimento de sites"}
+                </li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Document digitization"
+                    : "Digitalização de documentos"}
+                </li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Process automation"
+                    : "Automação de processos"}
+                </li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Social media management"
+                    : "Gestão de redes sociais"}
+                </li>
               </ul>
             </div>
           </div>
@@ -226,31 +303,67 @@ export default function Home() {
 
         {/* Education Section */}
         <section id="education" className="w-full mt-12">
-          <h2 className="text-3xl font-semibold mb-4">Education</h2>
+          <h2 className="text-3xl font-semibold mb-4">
+            {i18next.language !== "pt" ? "Education" : "Educação"}
+          </h2>
           <div className="flex flex-col gap-6">
             <div>
               <h3 className="text-xl font-medium">
-                Technologist in System Analysis and Development
+                {i18next.language !== "pt"
+                  ? "Technologist in System Analysis and Development"
+                  : "Tecnólogo em Análise e Desenvolvimento de Sistemas"}
               </h3>
               <p className="text-sm text-gray-600">
                 UniSenac | Pelotas, RS, Brazil | Expected Completion: 2025
               </p>
               <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
-                <li>Database (MySQL and MongoDB)</li>
-                <li>Web Programming (React.js and TailwindCSS)</li>
-                <li>Algorithms and Data Structures (Python)</li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Database (MySQL and MongoDB)"
+                    : "Banco de dados (MySQL e MongoDB)"}
+                </li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Web Programming (React.js and TailwindCSS)"
+                    : "Programação web (React.js e TailwindCSS)"}
+                </li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Algorithms and Data Structures (Python)"
+                    : "Algoritmos e estruturas de dados (Python)"}
+                </li>
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-medium">Front End Beginner</h3>
+              <h3 className="text-xl font-medium">
+                {i18next.language !== "pt"
+                  ? "Front End Beginner"
+                  : "Iniciante em Front End"}
+              </h3>
               <p className="text-sm text-gray-600">
                 Ada Tech - Santander Coders | 2024
               </p>
               <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
-                <li>Static Front End (HTML and CSS)</li>
-                <li>Programming Logic (JS)</li>
-                <li>Object-Oriented Programming (JS)</li>
-                <li>Dynamic Front End (JS DOM)</li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Static Front End (HTML and CSS)"
+                    : "Front End estático (HTML e CSS)"}
+                </li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Programming Logic (JS)"
+                    : "Lógica de programação (JS)"}
+                </li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Object-Oriented Programming (JS)"
+                    : "Programação orientada a objetos (JS)"}
+                </li>
+                <li>
+                  {i18next.language !== "pt"
+                    ? "Dynamic Front End (JS DOM)"
+                    : "Front End dinâmico (JS DOM)"}
+                </li>
                 <li>Angular I & II</li>
               </ul>
             </div>
@@ -259,11 +372,16 @@ export default function Home() {
 
         {/* Skills Section */}
         <section id="skills" className="w-full mt-12">
-          <h2 className="text-3xl font-semibold mb-4">Skills</h2>
+          <h2 className="text-3xl font-semibold mb-4">
+            {i18next.language !== "pt" ? "Skills" : "Habilidades"}
+          </h2>
           <div className="grid grid-cols-2 gap-8 text-gray-700 dark:text-gray-300">
             <div>
               <h3 className="text-2xl font-medium mb-2">
-                <span className="md:hidden">Programming</span> Languages
+                <span className="md:hidden">
+                  {i18next.language !== "pt" ? "Programming" : "Programação"}
+                </span>
+                {i18next.language !== "pt" ? "Languages" : "Linguagens"}
               </h3>
               <ul className="flex flex-col gap-2">
                 <li className="flex items-center">
@@ -294,7 +412,9 @@ export default function Home() {
             </div>
             <div>
               <h3 className="text-2xl font-medium mb-2">
-                Frameworks & Libraries
+                {i18next.language !== "pt"
+                  ? "Frameworks & Libraries"
+                  : "Bibliotecas e Frameworks"}
               </h3>
               <ul className="flex flex-col gap-2">
                 <li className="flex items-center">
@@ -324,7 +444,11 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h3 className="text-2xl font-medium mb-2">Tools & Platforms</h3>
+              <h3 className="text-2xl font-medium mb-2">
+                {i18next.language !== "pt"
+                  ? "Tools & Platforms"
+                  : "Ferramentas e Plataformas"}
+              </h3>
               <ul className="flex flex-col gap-2">
                 <li className="flex items-center">
                   <img
@@ -361,7 +485,7 @@ export default function Home() {
                     src="/proactivity.svg"
                     alt="Proactivity"
                   />
-                  Proactivity
+                  {i18next.language !== "pt" ? "Proactivity" : "Proatividade"}
                 </li>
                 <li className="flex items-center">
                   <img
@@ -369,7 +493,7 @@ export default function Home() {
                     src="/charisma.svg"
                     alt="Charisma"
                   />
-                  Charisma
+                  {i18next.language !== "pt" ? "Charisma" : "Carisma"}
                 </li>
                 <li className="flex items-center">
                   <img
@@ -377,7 +501,7 @@ export default function Home() {
                     src="/creativity.svg"
                     alt="Creativity"
                   />
-                  Creativity
+                  {i18next.language !== "pt" ? "Creativity" : "Creatividade"}
                 </li>
               </ul>
             </div>
@@ -386,9 +510,13 @@ export default function Home() {
 
         {/* Contact Section */}
         <section id="contact" className="w-full mt-12">
-          <h2 className="text-3xl font-semibold mb-4">Get in Touch</h2>
+          <h2 className="text-3xl font-semibold mb-4">
+            {i18next.language !== "pt" ? "Get in Touch" : "Entre em Contato"}
+          </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-            Feel free to reach out for collaboration or just a friendly chat.
+            {i18next.language !== "pt"
+              ? "Feel free to reach out for collaboration or just a friendly chat."
+              : "Estou aberto para colaborações ou também para bater um papo."}
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -419,8 +547,10 @@ export default function Home() {
 
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center text-gray-500 mt-12">
         <p>
-          &copy; {new Date().getFullYear()} Pedro Bilhalva Oliveira. All rights
-          reserved.
+          &copy; {new Date().getFullYear()} Pedro Bilhalva Oliveira.{" "}
+          {i18next.language !== "pt"
+            ? "All rights reserved."
+            : "Todos os direitos reservados."}
         </p>
       </footer>
     </div>
