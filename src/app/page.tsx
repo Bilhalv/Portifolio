@@ -161,7 +161,6 @@ export default function Home() {
             {i18next.language !== "pt"
               ? "Analysis and Development Student | Tech Enthusiast"
               : "Estudante de Análise e Desenvolvimento de Sistemas | Entusiasta de Tecnologia"}
-            System
           </p>
         </section>
 
